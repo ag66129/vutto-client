@@ -24,16 +24,16 @@ const AddEditBike = () => {
   };
 
   return (
-    <Container style={{ padding: 5, background: 'grey' }}>
-      <form onSubmit={handleSubmit}>
-        <TextField variant="outlined" placeholder="Brand" value={bike.brand} onChange={e => setBike({ ...bike, brand: e.target.value })} />
-        <TextField variant="outlined" placeholder="Model" value={bike.model} onChange={e => setBike({ ...bike, model: e.target.value })} />
-        <TextField variant="outlined" placeholder="Year" value={bike.year} onChange={e => setBike({ ...bike, year: e.target.value })} />
-        <TextField variant="outlined" placeholder="Price" value={bike.price} onChange={e => setBike({ ...bike, price: e.target.value })} />
-        <TextField variant="outlined" placeholder="KM Driven" value={bike.kilometers_driven} onChange={e => setBike({ ...bike, kilometers_driven: e.target.value })} />
-        <TextField variant="outlined" placeholder="Location" value={bike.location} onChange={e => setBike({ ...bike, location: e.target.value })} />
-        <TextField variant="outlined" placeholder="Image URL" value={bike.imageUrl} onChange={e => setBike({ ...bike, imageUrl: e.target.value })} />
-        <Button variant='contained' type="submit">{id ? 'Update' : 'Add'} Bike</Button>
+    <Container style={{ margin: '50px', padding: '10px 50px', borderRadius: '10px', background: "#f1eaeaff" }}>
+      <form style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem'}} onSubmit={handleSubmit}>
+        <TextField fullWidth variant="outlined" placeholder="Brand" value={bike.brand} onChange={e => setBike({ ...bike, brand: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="Model" value={bike.model} onChange={e => setBike({ ...bike, model: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="Year" value={bike.year} onChange={e => setBike({ ...bike, year: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="Price" value={bike.price} onChange={e => setBike({ ...bike, price: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="KM Driven" value={bike.kilometers_driven} onChange={e => setBike({ ...bike, kilometers_driven: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="Location" value={bike.location} onChange={e => setBike({ ...bike, location: e.target.value })} />
+        <TextField fullWidth variant="outlined" placeholder="Image URL" value={bike.imageUrl} onChange={e => setBike({ ...bike, imageUrl: e.target.value })} />
+        <Button fullWidth variant='contained' type="submit">{id ? 'Update' : 'Add'} Bike</Button>
       </form>
 
     </Container>

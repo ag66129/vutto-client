@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import API from '../services/api';
 import BikeCard from '../components/BikeCard';
-import { Container } from '@mui/material';
+import { Container, TextField } from '@mui/material';
 
 const BikeList = () => {
     const [bikes, setBikes] = useState([]);
@@ -21,11 +21,13 @@ const BikeList = () => {
     }, [search]);
 
     return (
-        <Container>
+        <Container style={{position:'relative'}}>
             <h2>Used Bikes</h2>
-            <input
+            <TextField
+            style={{background: '#f8f5f5ff', borderRadius: '10px'}}
+                fullWidth variant="outlined"
                 type="text"
-                placeholder="Search by brand/model..."
+                placeholder="Search by brand / model..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
             />

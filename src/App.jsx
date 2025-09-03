@@ -24,43 +24,41 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Grid>
-          <Navbar />
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/bikes" element={<BikeList />} />
-            <Route path="/bikes/:id" element={<BikeDetail />} />
 
-            <Route
-              path="/add-bike"
-              element={
-                <PrivateRoute>
-                  <AddEditBike />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/edit-bike/:id"
-              element={
-                <PrivateRoute>
-                  <AddEditBike />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/my-bikes"
-              element={
-                <PrivateRoute>
-                  <MyBikes />
-                </PrivateRoute>
-              }
-            />
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/bikes" element={<BikeList />} />
+          <Route path="/bikes/:id" element={<BikeDetail />} />
 
-            <Route path="*" element={<Navigate to="/bikes" />} />
-          </Routes>
-        </Grid>
+          <Route
+            path="/add-bike"
+            element={
+              <PrivateRoute>
+                <AddEditBike />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/edit-bike/:id"
+            element={
+              <PrivateRoute>
+                <AddEditBike />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/my-bikes"
+            element={
+              <PrivateRoute>
+                <MyBikes />
+              </PrivateRoute>
+            }
+          />
 
+          <Route path="*" element={<Navigate to="/bikes" />} />
+        </Routes>
       </Router>
     </AuthProvider>
   );

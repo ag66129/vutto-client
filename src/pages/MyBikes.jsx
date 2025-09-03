@@ -35,19 +35,21 @@ const MyBikes = () => {
 
   return (
     <Container>
-      <h2>My Listings</h2>
-      <Button variant="contained" color='success' onClick={()=> navigate(`/add-bike`)}>Add New Bike</Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between', height: "2.5rem" }}>
+        <h2 >My Bike Listings</h2>
+        <Button size='small' variant="contained" color='success' onClick={() => navigate(`/add-bike`)}>Sell Bike</Button>
+      </div>
       {bikes.length === 0 ? (
         <p>No listings found.</p>
       ) : (
-        <ul>
+        <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', marginTop: '2rem' }}>
           {bikes.map(bike => (
             <li key={bike.id}>
               <h3>{bike.brand} {bike.model}</h3>
               <img src={bike.imageUrl} alt="bike" width="150" />
               <p>₹{bike.price} - {bike.kilometers_driven} km</p>
-              <Button variant="contained" onClick={()=> navigate(`/edit-bike/${bike.id}`)}>Edit</Button>
-              <Button style={{marginLeft: 10}} variant="contained"  color= 'error' onClick={() => handleDelete(bike.id)}>Delete</Button>
+              <Button variant="contained" onClick={() => navigate(`/edit-bike/${bike.id}`)}>Edit</Button>
+              <Button style={{ marginLeft: 10 }} variant="contained" color='error' onClick={() => handleDelete(bike.id)}>Delete</Button>
             </li>
           ))}
         </ul>
