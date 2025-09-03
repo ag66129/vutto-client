@@ -36,7 +36,8 @@ const Register = () => {
   };
 
   return (
-    <Container>
+    <Container style={{ justifyItems: 'center' }}>
+      <h1>Create your account</h1>
       <h2>Register</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input

@@ -17,14 +17,13 @@ const Login = () => {
   };
 
   return (
-    <Container>
+    <Container style={{justifyItems: 'center'}}>
+      <h1>Hey, Welcome to Vutto</h1>
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-      <Grid container spacing={2} >
+      <form onSubmit={handleSubmit} style={styles.form}>
         <input style={styles.input} placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} />
         <input style={styles.input} placeholder="Password" type="password" onChange={e => setForm({ ...form, password: e.target.value })} />
         <button style={styles.button} type="submit">Login</button>
-      </Grid>
     </form>
     </Container>
   );

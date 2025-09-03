@@ -46,7 +46,7 @@ const MyBikes = () => {
           {bikes.map(bike => (
             <li key={bike.id}>
               <h3>{bike.brand} {bike.model}</h3>
-              <img src={bike.imageUrl} alt="bike" width="150" />
+              <img src={bike.imageUrl} alt="bike" width="200" />
               <p>₹{bike.price} - {bike.kilometers_driven} km</p>
               <Button variant="contained" onClick={() => navigate(`/edit-bike/${bike.id}`)}>Edit</Button>
               <Button style={{ marginLeft: 10 }} variant="contained" color='error' onClick={() => handleDelete(bike.id)}>Delete</Button>
